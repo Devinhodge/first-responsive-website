@@ -13,16 +13,10 @@ footer {
 body {
         max-width: 850px;
         max-height: 675px;
-        min-width: 150px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 50% 5% 10% 35%;
-        grid-template-areas: 
-            "main main main"
-            "banner banner banner"
-            "aside aside aside"
-            "footer footer footer";
-}
+        }
 @media (min-width: 300px) {
     body {
         grid-template-columns: 1fr;
@@ -30,8 +24,9 @@ body {
         grid-template-areas: 
             "main"
             "blank"
-            "title"
+            "aside"
             "footer";
+    }
 }
 .welcome-image {
     background-image: url(./alberta-2297204_1920.jpg);
@@ -41,8 +36,19 @@ body {
     display: flex;
     justify-content: center;
 }
+@media (min-width: 300px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "main"
+            "blank"
+            "aside"
+            "footer";
+    }
+}
 h1 {
-    margin: 25%;
+    margin: 35%;
     grid-row: 1/2;
     grid-column: 1/4;
     display: flex;
@@ -59,16 +65,19 @@ h1 {
     grid-row: 3/4;
     background-color: rgb(82, 163, 255);
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     font-size: 40px;
     color: rgb(0, 8, 8);
     font-weight: bolder;
     font-family: 'Nunito Sans', sans-serif;
 }
 p {
+    grid-column: 1/5;
     grid-row: 4/5;
     background-color: rgb(253, 129, 71);
     font-size: 18px;
+    display: flex;
+    flex-direction: row;
     text-align: center;
     font-family: 'Francois One', sans-serif;
     font-weight: lighter;
